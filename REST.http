@@ -1,0 +1,78 @@
+### Solicitud de destinos por id de usuario
+GET http://localhost:5000/api/destinos/usuarios/61238a20511857455409b8d2
+
+### Solicitud de destinos por id de destino
+GET http://localhost:5000/api/destinos/6122963aafed661ab8ce27a9
+
+### POST creación de destinos
+POST http://localhost:5000/api/destinos/ HTTP/1.1
+content-type: application/json
+
+{
+    "nombre": "Seychelles",
+    "descripcion": "Playas de blancas arenas y azules aguas",
+    "localizacion": {
+        "lat": 22.3022825,
+        "lng": -14.5240189
+    },
+    "direccion": "Océano Índico, 2ºIzquierda",
+    "creador": "6124e2f856c7e35924d1480f"
+}
+
+### POST creación de destinos (II)
+POST http://localhost:5000/api/destinos/ HTTP/1.1
+content-type: application/json
+
+{
+    "nombre": "Dunas de Maspalomas",
+    "descripcion": "Paradisíaco lugar del sur de Gran Canaria con una magnífica playa bajo cielos azules",
+    "localizacion": {
+      "lat": 27.7449968,
+      "lng": -15.5786953
+    },
+    "direccion": "Reserva Natural Especial de Las Dunas de Maspalomas",
+    "creador": "6124e2f856c7e35924d1480f"
+}
+
+### Solicitud de destino inexistente
+GET http://localhost:5000/api/u564
+
+### Actualización de destino 
+PATCH http://localhost:5000/api/destinos/613a4a53fe10b618b0730dce HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTNhNDlkNGZlMTBiNjE4YjA3MzBkYzkiLCJlbWFpbCI6ImRhbmlybUBnbWFpbC5jb20iLCJpYXQiOjE2MzEyMTAyMTIsImV4cCI6MTYzMTIxMzgxMn0.hvebbVzv4wHXhPCnQcVMcqx03T95kWvYNhJmVLcRGMQ
+
+{
+    "nombre": "Las Cañadas del Teide",
+    "descripcion": "Impresionante caldera de 17 kilómetros de diámetro"
+}
+
+### Eliminación de destino por su id
+DELETE http://localhost:5000/api/destinos/613a4a53fe10b618b0730dce
+
+
+
+
+### Lista de usuarios
+GET https://proyecto-corner.herokuapp.com/api/usuarios/
+
+### POST crear usuarios
+POST https://proyecto-corner.herokuapp.com/api/usuarios/alta HTTP/1.1
+content-type: application/json
+
+{
+    "nombre": "Ronald Jones",
+    "email": "ronjones@gmail.com",
+    "password": "123456"
+}
+
+### POST login usuarios
+POST https://proyecto-corner.herokuapp.com/api/usuarios/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "danirm@gmail.com",
+    "password": "123456"
+}
+
+
